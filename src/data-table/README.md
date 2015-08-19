@@ -158,3 +158,6 @@ The MDL CSS classes apply various predefined visual and behavioral enhancements 
 | `mdl-data-table--selectable` | Applies all/individual selectable behavior (checkboxes) | Optional; goes on table element |
 | `mdl-data-table__cell--non-numeric` | Applies text formatting to data cell | Optional; goes on both table header and table data cells |
 | (none) | Applies numeric formatting to header or data cell (default) |  |
+
+When making a selectable table you may provide a name and value for the rows checkbox.
+This is done by providing `data-mdl-data-table-selectable-name` and `data-mdl-data-table-selectable-value` attributes to the **table row** elements.

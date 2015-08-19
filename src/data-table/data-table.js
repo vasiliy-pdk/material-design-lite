@@ -118,6 +118,12 @@
     checkbox.classList.add('mdl-checkbox__input');
     if (row) {
       checkbox.addEventListener('change', this.selectRow_(checkbox, row));
+      if (row.getAttribute('data-mdl-data-table-selectable-name')) {
+        checkbox.name = row.getAttribute('data-mdl-data-table-selectable-name');
+      }
+      if (row.getAttribute('data-mdl-data-table-selectable-value')) {
+        checkbox.value = row.getAttribute('data-mdl-data-table-selectable-value');
+      }
     } else if (rows) {
       checkbox.addEventListener('change', this.selectRow_(checkbox, null, rows));
     }
