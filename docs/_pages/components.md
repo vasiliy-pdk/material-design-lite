@@ -319,6 +319,17 @@ categories:
             - caption: Expanding
               file: textfield-expanding.html
               demo_file: textfield-expanding-demo.html
+  - name: selectfields
+    title: Select Fields
+    description: Select field based dropdowns.
+    components:
+      - name: selectfield
+        class: mdl-selectfield
+        snippets:
+          - snippet_group:
+            - caption: Simple Select
+              file: selectfield.html
+              demo_file: selectfield-demo.html
   - name: tooltips
     title: Tooltips
     description: Useful information on hover.
