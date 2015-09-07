@@ -207,6 +207,7 @@ gulp.task('scripts', ['jscs', 'jshint'], function() {
     'src/progress/progress.js',
     'src/radio/radio.js',
     'src/selectfield/selectfield.js',
+    'src/dialog/dialog.js',
     'src/slider/slider.js',
     'src/spinner/spinner.js',
     'src/switch/switch.js',
