@@ -145,8 +145,8 @@ gulp.task('styletemplates', function() {
 gulp.task('styles', function() {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    //'src/material-design-lite.scss',
     'src/material-design-lite-veeqo.scss'
+    //'src/material-design-lite.scss'
   ])
     // Generate Source Maps
     .pipe($.sourcemaps.init())
@@ -734,4 +734,105 @@ gulp.task('styles:gen', ['styles'], function() {
     });
   });
   stream.pipe(gulp.dest('dist'));
+});
+
+/*
+ * ========================================================
+ *                   VEEQO CUSTOM TASKS
+ * ========================================================
+ */
+
+// Compile and Automatically Prefix Stylesheets
+gulp.task('styles:veeqo', function() {
+  // For best performance, don't add Sass partials to `gulp.src`
+  return gulp.src([
+    'src/material-design-lite-veeqo.scss'
+  ])
+    // Exclude unused components
+    .pipe($.replace(/@import.*(badge|card|data-table|footer|layout|slider|tabs|grid).*$/mg, ''))
+    .pipe($.sourcemaps.init())
+    .pipe($.sass({
+      precision: 10,
+      onError: console.error.bind(console, 'Sass error:')
+    }))
+    .pipe($.cssInlineImages({
+      webRoot: 'src'
+    }))
+    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+    .pipe(gulp.dest('.tmp'))
+    // Concatenate Styles
+    .pipe($.concat('material-veeqo.css'))
+    .pipe($.header(banner, {pkg: pkg}))
+    .pipe(gulp.dest('./dist'))
+    // Minify Styles
+    .pipe($.if('*.css', $.csso()))
+    .pipe($.concat('material-veeqo.min.css'))
+    .pipe($.header(banner, {pkg: pkg}))
+    .pipe($.sourcemaps.write('./'))
+    .pipe(gulp.dest('./dist'))
+    .pipe($.size({title: 'styles'}));
+});
+
+gulp.task('scripts:veeqo', ['jscs', 'jshint'], function() {
+  var sources = [
+    // Component handler
+    'src/mdlComponentHandler.js',
+    // Polyfills/dependencies
+    'src/third_party/**/*.js',
+    // Base components
+    'src/button/button.js',
+    'src/checkbox/checkbox.js',
+    'src/icon-toggle/icon-toggle.js',
+    'src/menu/menu.js',
+    'src/progress/progress.js',
+    'src/radio/radio.js',
+    'src/selectfield/selectfield.js',
+    'src/slider/slider.js',
+    'src/spinner/spinner.js',
+    'src/switch/switch.js',
+    //'src/tabs/tabs.js',
+    'src/textfield/textfield.js',
+    'src/tooltip/tooltip.js',
+    // Complex components (which reuse base components)
+    //'src/layout/layout.js',
+    //'src/data-table/data-table.js',
+    // And finally, the ripples
+    'src/ripple/ripple.js'
+  ];
+  return gulp.src(sources)
+      .pipe(uniffe())
+      .pipe($.sourcemaps.init())
+    // Concatenate Scripts
+      .pipe($.concat('material-veeqo.js'))
+      .pipe($.iife({
+        useStrict: true,
+      }))
+      .pipe(gulp.dest('./dist'))
+    // Minify Scripts
+      .pipe($.uglify({
+        sourceRoot: '.',
+        sourceMapIncludeSources: true
+      }))
+      .pipe($.header(banner, {pkg: pkg}))
+      .pipe($.concat('material-veeqo.min.js'))
+    // Write Source Maps
+      .pipe($.sourcemaps.write('./'))
+      .pipe(gulp.dest('./dist'))
+      .pipe($.size({title: 'scripts'}));
+});
+
+// Place built material lite veeqo distributive to Veeqo's vendor folder.
+gulp.task('put:veeqo', function() {
+  var veeqoRoot = process.env.VEEQO_PATH || '../veeqo/';
+  process.stdout.write('Using "' + veeqoRoot + '" as path to Veeqo\n');
+  process.stdout.write('  set VEEQO_PATH environment variable to override\n');
+  gulp.src('./dist/material-veeqo*.css')
+      .pipe(gulp.dest(veeqoRoot + 'vendor/assets/stylesheets/material-lite'));
+
+  return gulp.src('./dist/material-veeqo*.js')
+      .pipe(gulp.dest(veeqoRoot + 'vendor/assets/javascripts/material-lite'));
+});
+
+gulp.task('veeqo:build', ['clean', 'mocha'], function(cb) {
+  runSequence(['styles:veeqo', 'scripts:veeqo'], cb);
 });
