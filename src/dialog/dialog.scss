@@ -1,9 +1,9 @@
 $dialog-padding: $baseline-grid * 3;
 
-.md-dialog-is-showing {
+.mdl-dialog-is-showing {
   max-height: 100%;
 }
-.md-dialog-container {
+.mdl-dialog-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,14 +16,14 @@ $dialog-padding: $baseline-grid * 3;
   overflow: hidden;
 }
 
-md-dialog {
+.mdl-dialog {
 
-  &.md-transition-in {
+  &.mdl-transition-in {
     opacity: 1;
     transition: $swift-ease-out;
     transform: translate3d(0,0,0) scale(1.0);
   }
-  &.md-transition-out {
+  &.mdl-transition-out {
     opacity: 0;
     transition: $swift-ease-out;
     transform: translate3d(0,100%,0) scale(0.2);
@@ -46,14 +46,14 @@ md-dialog {
     flex-direction: column;
     overflow: auto;
   }
-  md-dialog-content {
+  .mdl-dialog-content {
     order: 1;
     flex-direction: column;
     padding: $dialog-padding;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 
-    &:not([layout=row]) > *:first-child:not(.md-subheader) {
+    &:not([layout=row]) > *:first-child:not(.mdl-subheader) {
       margin-top: 0;
     }
 
@@ -61,7 +61,7 @@ md-dialog {
       outline: none;
     }
 
-    .md-subheader {
+    .mdl-subheader {
       margin: 0;
 
       &.sticky-clone {
@@ -77,12 +77,12 @@ md-dialog {
       }
     }
 
-    .md-dialog-content-body {
+    .mdl-dialog-content-body {
       width:100%;
     }
   }
 
-  .md-actions {
+  .mdl-actions {
     display: flex;
     order: 2;
     box-sizing: border-box;
@@ -94,14 +94,14 @@ md-dialog {
     min-height: $baseline-grid * 6.5;
     overflow: hidden;
 
-    .md-button {
+    .mdl-button {
       margin-bottom: $baseline-grid;
       margin-left: $baseline-grid;
       margin-right: 0;
       margin-top: $baseline-grid;
     }
   }
-  &.md-content-overflow .md-actions {
+  &.mdl-content-overflow .mdl-actions {
     border-top-width: 1px;
     border-top-style: solid;
   }
@@ -109,7 +109,7 @@ md-dialog {
 }
 
 @media screen and (-ms-high-contrast: active) {
-  md-dialog {
+  .mdl-dialog {
     border: 1px solid #fff;
   }
 }
