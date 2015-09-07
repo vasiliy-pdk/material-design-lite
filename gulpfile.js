@@ -145,7 +145,8 @@ gulp.task('styletemplates', function() {
 gulp.task('styles', function() {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
-    'src/material-design-lite.scss'
+    //'src/material-design-lite.scss',
+    'src/material-design-lite-veeqo.scss'
   ])
     // Generate Source Maps
     .pipe($.sourcemaps.init())

@@ -1,0 +1,21 @@
+/* This is file with Veeqo variables to override material-lite ones */
+
+/* BUTTONS */
+$vq-button-padding: 0 15px !default;
+$vq-button-margin: 10px !default;
+
+$vq-button-main-color: #4ca1d9;
+$vq-button-main-color-hover: #408888;
+$vq-button-main-color-pressed: #3a77a2;
+$vq-button-main-color-disabled: #e0e0e0;
+
+$vq-button-main-color-text: #fff;
+$vq-button-main-color-text-disabled: #909292;
+
+$vq-button-alt-color: #fff;
+$vq-button-alt-color-hover: #f2f2f2;
+$vq-button-alt-color-pressed: #3a77a2;
+$vq-button-alt-color-disabled: #dedede;
+
+$vq-button-alt-color-text: #fff;
+$vq-button-alt-color-text-disabled: $vq-button-main-color-text-disabled;
