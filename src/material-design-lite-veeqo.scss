@@ -90,6 +90,20 @@
   }
 }
 
+.mdl-button--icon-raised {
+  padding: 7px 15px 7px 10px;
+  .material-icons {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+}
+
+.mdl-button--icon-flat {
+  @extend .mdl-button--icon-raised;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .mdl-button--flat {
   border-radius: 2px;
   color: #4CA1D9;
@@ -116,6 +130,10 @@
 .mdl-button--flat.mdl-button--disabled.mdl-button--disabled {
   background-color: none;
   color: #909292;
+}
+
+.snippet-group .snippet-demo {
+  padding: 15px !important;
 }
 
 @import "card/card";
