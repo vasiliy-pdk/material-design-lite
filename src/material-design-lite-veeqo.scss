@@ -44,7 +44,78 @@
 @import "button/button";
 
 .mdl-button {
+  font-family: Open Sans, sans-serif;
+  font-weight: 600;
+  font-size: 0.75em;
   color: $vq-button-main-color;
+  margin: 10px;
+  padding: 8px 15px;
+  height: auto;
+  line-height: normal;
+}
+
+.mdl-button--fab {
+  height: 56px;
+  margin: auto;
+  padding: 0;
+}
+
+.mdl-button--icon .material-icons {
+  line-height: 18px;
+  width: 18px;
+  transform: translate(-11px,-9px);
+}
+
+.mdl-button--icon {
+  font-size: 18px;
+  height: 32px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  color: #4ca1d9;
+  line-height: normal;
+}
+
+.mdl-button--raised {
+  border-radius: 2px;
+  color: #fff;
+  background-color: #4CA1D9;
+
+  &:hover {
+    background-color: #408888;
+  }
+
+  &:active {
+    background-color: #3A77A2;
+  }
+}
+
+.mdl-button--flat {
+  border-radius: 2px;
+  color: #4CA1D9;
+  padding: 8px 10px;
+  
+  &:hover {
+    background-color: #F2F2F2;
+    color: #4CA1D9;
+  }
+
+  &:active {
+    background-color: #B7D9F0;
+    color: #4CA1D9;
+  }
+}
+
+.mdl-button--raised[disabled][disabled],
+.mdl-button--raised.mdl-button--disabled.mdl-button--disabled {
+  background-color: #E0E0E0;
+  color: #909292;
+}
+
+.mdl-button--flat[disabled][disabled],
+.mdl-button--flat.mdl-button--disabled.mdl-button--disabled {
+  background-color: none;
+  color: #909292;
 }
 
 @import "card/card";
