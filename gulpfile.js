@@ -749,7 +749,7 @@ gulp.task('styles:veeqo', function() {
     'src/material-design-lite-veeqo.scss'
   ])
     // Exclude unused components
-    .pipe($.replace(/@import.*(badge|card|data-table|footer|layout|slider|tabs|grid).*$/mg, ''))
+    .pipe($.replace(/@import.*(badge|card|data-table|footer|layout|slider|tabs|grid|resets|typography).*$/mg, ''))
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       precision: 10,
