@@ -1,14 +1,10 @@
+<style>
+  .demo-dialog .mdl-dialog {
+    width: 1024px;
+  }
+</style>
+
 <div class="mdl-dialog mdl-transition-in" aria-label="Mango (Fruit)">
-  <form>
-  <div class="mdl-toolbar">
-    <div class="mdl-toolbar-tools">
-      <h2>Mango (Fruit)</h2>
-      <span flex></span>
-      <div class="mdl-button" class="mdl-icon-button" ng-click="cancel()">
-        <div class="mdl-icon" mdl-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></div>
-      </div>
-    </div>
-  </div>
   <div class="mdl-dialog-content" style="max-width:800px;max-height:810px; ">
     <div>
       <p>
@@ -31,12 +27,11 @@
       More on Wikipedia
     </div>
     <span flex></span>
-    <div class="mdl-button" ng-click="answer('not useful')" >
+    <div class="mdl-button">
      Not Useful
     </div>
-    <div class="mdl-button" ng-click="answer('useful')" style="margin-right:20px;" >
+    <div class="mdl-button" style="margin-right:20px;" >
       Useful
     </div>
   </div>
-  </form>
 </div>

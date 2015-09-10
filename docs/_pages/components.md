@@ -358,5 +358,4 @@ categories:
             - caption: Simple Dialog
               file: dialog.html
               demo_file: index.html
-              full_width: true
 ---
