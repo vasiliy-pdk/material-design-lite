@@ -116,8 +116,10 @@
         this.boundMouseLeaveHandler = this.handleMouseLeave_.bind(this);
         this.forElement_.addEventListener('mouseenter', this.boundMouseEnterHandler,
             false);
-        this.forElement_.addEventListener('click', this.boundMouseEnterHandler,
-            false);
+        //This is commented because of this bug https://github.com/google/material-design-lite/issues/1461
+        //This is a quick fix.
+        //this.forElement_.addEventListener('click', this.boundMouseEnterHandler,
+        //    false);
         this.forElement_.addEventListener('blur', this.boundMouseLeaveHandler);
         this.forElement_.addEventListener('touchstart', this.boundMouseEnterHandler,
             false);
