@@ -61,19 +61,22 @@
 }
 
 .mdl-button--icon .material-icons {
-  line-height: 18px;
+  /* line-height: 18px;
   width: 18px;
-  transform: translate(-11px,-9px);
+  transform: translate(-11px,-9px);*/
 }
 
 .mdl-button--icon {
-  font-size: 18px;
   height: 32px;
   margin-left: 0;
   margin-right: 0;
   padding: 0;
   color: #4ca1d9;
   line-height: normal;
+
+  &:active {
+    background-color: lighten(#4ca1d9, 20%);
+  }
 }
 
 .mdl-button--raised {
