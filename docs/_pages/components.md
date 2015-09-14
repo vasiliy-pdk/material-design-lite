@@ -347,4 +347,15 @@ categories:
               file: tooltip-rich.html
             - caption: Multiple lines
               file: tooltip-multiline.html
+  - name: dialog
+    title: Dialog
+    description: Modal Dialog
+    components:
+      - name: dialog
+        class: mdl-dialog
+        snippets:
+          - snippet_group:
+            - caption: Simple Dialog
+              file: dialog.html
+              demo_file: index.html
 ---
