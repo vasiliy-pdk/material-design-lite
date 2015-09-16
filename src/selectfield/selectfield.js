@@ -111,6 +111,8 @@ MaterialSelectfield.prototype.clickMenu_ = function(evt) {
 MaterialSelectfield.prototype.clickMenuItem_ = function(event) {
   'use strict';
 
+  var prevSelectIndex = this.select_.selectedIndex;
+
   // change select to point to selected item (change index to index of menuItem inside menu)
   this.select_.selectedIndex = Array.prototype.indexOf.call(event.target.parentElement.childNodes, event.target);
 
@@ -119,6 +121,13 @@ MaterialSelectfield.prototype.clickMenuItem_ = function(event) {
 
   // set the buton text to the text of the selected option
   this.button_.innerHTML = option.innerHTML;
+
+  if (prevSelectIndex !== this.select_.selectedIndex) {
+    // trigger change event on the underlying select field
+    var changeEvent = document.createEvent('Event');
+    changeEvent.initEvent('change', true, true);
+    this.select_.dispatchEvent(changeEvent);
+  }
 };
 
 // The component registers itself. It can assume componentHandler is
