@@ -57,6 +57,7 @@ MaterialSelectfield.prototype.init = function() {
 
   if (this.element_) {
     this.select_ = this.element_.querySelector('.' + this.CssClasses_.SELECT);
+    this.select_.addEventListener('change', this.changeSelect_.bind(this));
 
     // create button to trigger the menu
     this.button_ = document.createElement('a');
@@ -111,16 +112,13 @@ MaterialSelectfield.prototype.clickMenu_ = function(evt) {
 MaterialSelectfield.prototype.clickMenuItem_ = function(event) {
   'use strict';
 
+  this.menuItemIsBeingClicked = true;
   var prevSelectIndex = this.select_.selectedIndex;
 
   // change select to point to selected item (change index to index of menuItem inside menu)
   this.select_.selectedIndex = Array.prototype.indexOf.call(event.target.parentElement.childNodes, event.target);
 
-  // get the option that has been chosen from our original select
-  var option = this.select_.options[this.select_.selectedIndex];
-
-  // set the buton text to the text of the selected option
-  this.button_.innerHTML = option.innerHTML;
+  this.update();
 
   if (prevSelectIndex !== this.select_.selectedIndex) {
     // trigger change event on the underlying select field
@@ -128,6 +126,32 @@ MaterialSelectfield.prototype.clickMenuItem_ = function(event) {
     changeEvent.initEvent('change', true, true);
     this.select_.dispatchEvent(changeEvent);
   }
+
+  this.menuItemIsBeingClicked = false;
+};
+
+MaterialSelectfield.prototype.changeSelect_ = function(event) {
+  'use strict';
+
+  if (this.menuItemIsBeingClicked !== false) {
+    // update anchor only if change caused by external reason
+    this.update();
+  }
+};
+
+/**
+ * Updates anchor with a new value
+ *
+ * @public
+ */
+MaterialSelectfield.prototype.update = function() {
+  'use strict';
+
+  // get the option that has been chosen from our original select
+  var option = this.select_.options[this.select_.selectedIndex];
+
+  // set the button text to the text of the selected option
+  this.button_.innerHTML = option.innerHTML;
 };
 
 // The component registers itself. It can assume componentHandler is
