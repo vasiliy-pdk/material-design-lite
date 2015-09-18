@@ -38,6 +38,32 @@
   }
 }
 
+.mdl-textfield {
+  .mdl-spinner {
+    position: absolute;
+    display: none;
+    margin-top: -$spinner-size - 2;
+    right: 0;
+  }
+
+  &.mdl-textfield-disabled {
+    .mdl-spinner {
+      display: block;
+
+      .mdl-spinner__layer-1,
+      .mdl-spinner__layer-2,
+      .mdl-spinner__layer-3,
+      .mdl-spinner__layer-4 {
+        border-color: $input-text-bottom-border-color;
+      }
+    }
+
+    .mdl-textfield__label {
+      display: none;
+    }
+  }
+}
+
 // Optional class to align right.
 .mdl-textfield--align-right {
   text-align: right;

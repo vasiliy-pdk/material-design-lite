@@ -305,6 +305,9 @@ categories:
             - caption: Numeric
               file: textfield-numeric.html
               demo_file: textfield-numeric-demo.html
+            - caption: With Spinner
+              file: textfield-disabled.html
+              demo_file: textfield-disabled-demo.html
           - snippet_group:
             - caption: Text with floating label
               file: textfield-floating-text.html
