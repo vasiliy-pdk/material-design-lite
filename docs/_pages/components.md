@@ -316,9 +316,19 @@ categories:
             - caption: Multiple line
               file: textfield-multi-line.html
               demo_file: textfield-multi-line-demo.html
+            - caption: Multiple line floating label
+              file: textfield-multi-line-floating.html
+              demo_file: textfield-multi-line-floating-demo.html
             - caption: Expanding
               file: textfield-expanding.html
               demo_file: textfield-expanding-demo.html
+          - snippet_group:
+            - caption: Multiple lines with max lines
+              file: textfield-multi-line-max.html
+              demo_file: textfield-multi-line-max-demo.html
+            - caption: Multiple lines with max lines and floating label
+              file: textfield-multi-line-max-floating.html
+              demo_file: textfield-multi-line-max-floating-demo.html
   - name: selectfields
     title: Select Fields
     description: Select field based dropdowns.
