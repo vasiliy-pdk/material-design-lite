@@ -30,6 +30,9 @@
 // Variables and mixins
 @import "veeqo-tweaks/variables";
 @import "variables";
+
+$input-text-highlight-color: $vq-color-primary-blue;
+
 @import "mixins";
 
 // Resets and dependencies
@@ -93,7 +96,7 @@
   }
 }
 
-.mdl-button--raised--cancel {
+.mdl-button--raised--light {
   @extend .mdl-button--raised;
   background-color: #fff;
   color: #4CA1D9;
@@ -120,7 +123,7 @@
   }
 }
 
-.mdl-button--icon-raised--cancel {
+.mdl-button--icon-raised--light {
   @extend .mdl-button--icon-raised;
   background-color: #fff;
   color: #4CA1D9;
@@ -144,7 +147,7 @@
   padding-right: 10px;
 }
 
-.mdl-button--icon-flat--cancel {
+.mdl-button--icon-flat--light {
   @extend .mdl-button--icon-flat;
   color: #595959 !important;
 
@@ -164,7 +167,7 @@
   border-radius: 2px;
   color: #4CA1D9;
   padding: 8px 10px;
-  
+
   &:hover {
     background-color: #F2F2F2;
     color: #4CA1D9;
@@ -178,7 +181,7 @@
 
 }
 
-.mdl-button--flat--cancel {
+.mdl-button--flat--light {
   @extend .mdl-button--flat;
   color: #595959;
 
