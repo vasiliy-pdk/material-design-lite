@@ -75,12 +75,13 @@
 }
 
 .mdl-button--raised {
+  min-width: 80px;
   border-radius: 2px;
   color: #fff;
   background-color: #4CA1D9;
 
   &:hover {
-    background-color: #408888;
+    background-color: #4088b8;
   }
 
   &:active {
@@ -92,11 +93,48 @@
   }
 }
 
+.mdl-button--raised--cancel {
+  @extend .mdl-button--raised;
+  background-color: #fff;
+  color: #4CA1D9;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
+
+  &:active {
+    background-color: #dedede;
+  }
+
+  &:focus {
+    background-color: #dedede !important;
+  }
+}
+
 .mdl-button--icon-raised {
   padding: 7px 15px 7px 10px;
+  min-width: 90px;
   .material-icons {
     font-size: 14px;
     margin-bottom: 2px;
+  }
+}
+
+.mdl-button--icon-raised--cancel {
+  @extend .mdl-button--icon-raised;
+  background-color: #fff;
+  color: #4CA1D9;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
+
+  &:active {
+    background-color: #dedede;
+  }
+
+  &:focus {
+    background-color: #dedede !important;
   }
 }
 
@@ -104,6 +142,22 @@
   @extend .mdl-button--icon-raised;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.mdl-button--icon-flat--cancel {
+  @extend .mdl-button--icon-flat;
+  color: #595959 !important;
+
+  &:hover {
+    background-color: #F2F2F2;
+    color: #595959;
+  }
+
+  &:active,
+  &:focus {
+    background-color: #dedede !important;
+    color: #595959 !important;
+  }
 }
 
 .mdl-button--flat {
@@ -116,9 +170,27 @@
     color: #4CA1D9;
   }
 
-  &:active {
+  &:active,
+  &:focus {
     background-color: #B7D9F0;
     color: #4CA1D9;
+  }
+
+}
+
+.mdl-button--flat--cancel {
+  @extend .mdl-button--flat;
+  color: #595959;
+
+  &:hover {
+    background-color: #F2F2F2;
+    color: #595959;
+  }
+
+  &:active,
+  &:focus {
+    background-color: #dedede;
+    color: #595959;
   }
 }
 
