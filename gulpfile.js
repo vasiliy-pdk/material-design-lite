@@ -826,10 +826,10 @@ gulp.task('put:veeqo', function() {
   var veeqoRoot = process.env.VEEQO_PATH || '../veeqo/';
   process.stdout.write('Using "' + veeqoRoot + '" as path to Veeqo\n');
   process.stdout.write('  set VEEQO_PATH environment variable to override\n');
-  gulp.src('./dist/material-veeqo*.css')
+  gulp.src('./dist/material-veeqo.css')
       .pipe(gulp.dest(veeqoRoot + 'vendor/assets/stylesheets/material-lite'));
 
-  return gulp.src('./dist/material-veeqo*.js')
+  return gulp.src('./dist/material-veeqo.js')
       .pipe(gulp.dest(veeqoRoot + 'vendor/assets/javascripts/material-lite'));
 });
 
