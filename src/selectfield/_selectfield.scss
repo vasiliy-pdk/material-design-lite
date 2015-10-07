@@ -68,6 +68,15 @@
   .mdl-menu__container, .mdl-menu__outline, .mdl-menu {
     min-width: 100%;
   }
+
+  .mdl-selectfield__label {
+    @extend .mdl-textfield__label;
+  }
+
+  .mdl-selectfield__label {
+    top: 0px;
+    bottom: auto;
+  }
 }
 
 .mdl-select__button {

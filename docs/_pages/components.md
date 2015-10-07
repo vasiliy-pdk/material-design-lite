@@ -340,6 +340,9 @@ categories:
             - caption: Simple Select
               file: selectfield.html
               demo_file: selectfield-demo.html
+            - caption: Select field with label
+              file: selectfield-labeled.html
+              demo_file: selectfield-labeled-demo.html
   - name: tooltips
     title: Tooltips
     description: Useful information on hover.

@@ -223,7 +223,6 @@ $input-text-highlight-color: $vq-color-primary-blue;
 @import "progress/progress";
 @import "layout/layout";
 @import "radio/radio";
-@import "selectfield/selectfield";  // custom component
 @import "slider/slider";
 @import "spinner/spinner";
 @import "switch/switch";
@@ -232,3 +231,5 @@ $input-text-highlight-color: $vq-color-primary-blue;
 @import "tooltip/tooltip";
 @import "shadow/shadow";
 @import "grid/grid";
+
+@import "selectfield/selectfield";  // custom component
